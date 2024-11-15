@@ -1,0 +1,210 @@
+:root {
+    --uk-position-margin-offset: 0px;
+}
+.uk-margin {
+    margin-bottom: 20px;
+}
+:focus-visible {
+    outline: 2px dotted #e1e8ed;
+}
+:focus {
+    outline: none;
+}
+.uk-margin-remove-vertical {
+    margin-bottom: 0!important;
+    margin-top: 0!important;
+}
+.uk-align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+[class*=uk-align] {
+    display: block;
+    margin-bottom: 30px;
+}
+.uk-width-xlarge {
+    width: 700px;
+}
+[class*=uk-width] {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+}
+.uk-flex-middle {
+    align-items: center;
+}
+.uk-flex-between {
+    justify-content: space-between;
+}
+.uk-grid-collapse, .uk-grid-column-collapse {
+    margin-left: 0;
+}
+@media (min-width: 1200px){
+.uk-grid {
+    margin-left: -40px;
+}
+.uk-grid>* {
+    padding-left: 40px;
+}
+.uk-grid-divider {
+    margin-left: -80px;
+}
+.uk-grid-divider>* {
+    padding-left: 80px;
+}
+.uk-grid-divider>:not(.uk-first-column):before {
+    left: 40px;
+}
+}
+.uk-grid {
+    margin-left: -30px;
+}
+.uk-grid {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.uk-width-auto {
+    width: auto;
+}
+.uk-grid-collapse>*, .uk-grid-column-collapse>* {
+    padding-left: 0;
+}
+.uk-grid>* {
+    padding-left: 30px;
+}
+.uk-grid>* {
+    margin: 0;
+}
+.uk-grid>*>:last-child {
+    margin-bottom: 0;
+}
+.fc-game-panel {
+    align-content: center;
+    align-items: center;
+    background-color: #182026;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    display: flex;
+    height: 36px;
+    line-height: 1;
+    padding: 0 20px;
+    pointer-events: none;
+    position: relative;
+    white-space: nowrap;
+}
+.fc-game-panel:after {
+    border-right: 36px solid transparent;
+    border-top: 36px solid #182026;
+    content: "";
+    height: 100%;
+    position: absolute;
+    right: -36px;
+    top: 0;
+    width: 0;
+}
+.uk-flex-nowrap {
+    flex-wrap: nowrap;
+}
+.uk-grid-column-medium, .uk-grid-medium {
+    margin-left: -30px;
+}
+.uk-grid-column-medium>*, .uk-grid-medium>* {
+    padding-left: 30px;
+}
+[class*=uk-inline] {
+    -webkit-backface-visibility: hidden;
+    display: inline-block;
+    max-width: 100%;
+    position: relative;
+    vertical-align: middle;
+}
+.uk-text-muted {
+    color: #a7b6c2!important;
+}
+.uk-grid-divider.uk-grid-column-small, .uk-grid-divider.uk-grid-small {
+    margin-left: -30px;
+}
+.uk-grid-divider {
+    margin-left: -60px;
+}
+.uk-grid-column-small, .uk-grid-small {
+    margin-left: -15px;
+}
+.uk-grid-divider.uk-grid-column-small>*, .uk-grid-divider.uk-grid-small>* {
+    padding-left: 30px;
+}
+.uk-grid-divider>* {
+    padding-left: 60px;
+}
+.uk-grid-divider>* {
+    position: relative;
+}
+.uk-grid-column-small>*, .uk-grid-small>* {
+    padding-left: 15px;
+}
+.uk-grid-divider.uk-grid-column-small>:not(.uk-first-column):before, .uk-grid-divider.uk-grid-small>:not(.uk-first-column):before {
+    left: 15px;
+}
+.uk-grid-divider>:not(.uk-first-column):before {
+    left: 30px;
+}
+.uk-grid-divider>:not(.uk-first-column):before {
+    border-left: 2px solid rgba(95,107,124,.2);
+    bottom: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+}
+.fc-game-panel-icon {
+    padding-left: 28px;
+}
+.uk-position-center-left {
+    left: 0;
+}
+[class*=uk-position-center-left], [class*=uk-position-center-right] {
+    --uk-position-translate-y: -50%;
+    top: calc(50% - var(--uk-position-margin-offset));
+    transform: translateY(var(--uk-position-translate-y));
+}
+[class*=uk-position-bottom], [class*=uk-position-center], [class*=uk-position-left], [class*=uk-position-right], [class*=uk-position-top] {
+    box-sizing: border-box;
+    max-width: calc(100% - var(--uk-position-margin-offset)*2);
+    position: absolute!important;
+}
+.uk-icon {
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+}
+.uk-icon {
+    fill: currentcolor;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    display: inline-block;
+    font: inherit;
+    line-height: 0;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    text-transform: none;
+}
+.uk-icon>* {
+    transform: translate(0);
+}
+canvas, img, svg, video {
+    box-sizing: border-box;
+    height: auto;
+    max-width: 100%;
+}
+audio, canvas, iframe, img, svg, video {
+    vertical-align: middle;
+}
+.fc-icon-ps, .fc-icon-ps5 {
+    color: #137cbd!important;
+}
+/*Range slider*/

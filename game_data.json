@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Fifa 2022",
+    "prices": [
+      { "id": 1, "quantity": "500k", "price": "0.89 $", "platform": 1 },
+      { "id": 2, "quantity": "1M", "price": "0.80 $", "platform": 1 },
+      { "id": 3, "quantity": "200k", "price": "1.43 $", "platform": 3 }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Call Of Duty",
+    "prices": [
+      { "id": 4, "quantity": "500k", "price": "0.89 $", "platform": 2 },
+      { "id": 5, "quantity": "1M", "price": "0.80 $", "platform": 2 },
+      { "id": 6, "quantity": "200k", "price": "1.43 $", "platform": 3 }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "tttt",
+    "prices": [
+      { "id": 4, "quantity": "500k", "price": "0.89 $", "platform": 2 },
+      { "id": 5, "quantity": "1M", "price": "0.80 $", "platform": 2 },
+      { "id": 6, "quantity": "200k", "price": "1.43 $", "platform": 3 }
+    ]
+  }
+]

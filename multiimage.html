@@ -1,0 +1,122 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item-img-selected {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: top;
+        margin: 5px; 
+        overflow: hidden;
+    }
+        .item-img-selected img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+    .removeFile {
+        position: absolute;
+        padding: 5px 10px;
+        display: inline-block;
+        background: #e7051b;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        color: #fff;
+    }
+    .upload-image {
+        display: none;
+    }
+    #image_listing {
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <form id="fUpload">
+        <img id="image_listing" src="https://propzy.vn/assets/images/version-4/img-upload.png" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+        <input class="upload-image" type="file" id="upload-file" accept="image/*" multiple="" onchange="loadFile(event)" name="files">
+        <div id="output"></div>
+    <form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let dt = new DataTransfer(); 
+        const input = $("#upload-file")[0];
+        var output = $('#output');
+
+        $("#image_listing").click(function () {
+            $("#upload-file").click();
+        }); 
+
+        var loadFile = function (event) { 
+            if (event.target.files) {
+            // output.empty();
+                for (let i = 0; i < event.target.files.length; i++) {
+                    dt.items.add(event.target.files[i]);
+                    output.append("<div class='item-img-selected'><img src='" + URL.createObjectURL(event.target.files[i]) + "'    /><span class='removeFile' onclick='removeFileFromFileList("+i+")'><b>X</b></span></div>")
+                }
+            }
+            input.files = dt.files;
+        }
+        function removeFileFromFileList(index) { 
+            let dtRemove = new DataTransfer();
+            const { files } = input;
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                if (index !== i)
+                    dtRemove.items.add(file);
+            }
+            dt = dtRemove;
+            input.files = dt.files;
+            //--------------------------------------------
+            //var output = $('#output');
+            if (input.files) {
+                output.empty();
+                for (let i = 0; i < input.files.length; i++) { 
+                    output.append("<div class='item-img-selected'><img src='" + URL.createObjectURL(input.files[i]) + "'  /><span class='removeFile' onclick='removeFileFromFileList(" + i + ")'><b>X</b></span></div>")
+                }
+            }
+        }
+
+        function dropHandler(ev) { 
+            ev.preventDefault();   
+            if (ev.dataTransfer.items) { 
+                for (var i = 0; i < ev.dataTransfer.items.length; i++) { 
+                    if (ev.dataTransfer.items[i].kind === 'file') {
+                        var file = ev.dataTransfer.items[i].getAsFile();
+                        dt.items.add(ev.dataTransfer.files[i]);
+                    }
+                }
+            } else { 
+                for (var i = 0; i < ev.dataTransfer.files.length; i++) {  dt.items.add(ev.dataTransfer.files[i]); }
+            }
+
+            input.files = dt.files; 
+            //--------------------------------------------
+            //var output = $('#output');
+            if (input.files) {
+                output.empty();
+                for (let i = 0; i < input.files.length; i++) {
+                    output.append("<div class='item-img-selected'><img src='" + URL.createObjectURL(input.files[i]) + "'    /><span class='removeFile'  onclick='removeFileFromFileList(" + i + ")'><b>X</b></span></div>")
+                }
+            }
+
+        }
+        function dragOverHandler(ev) {
+            console.log('File(s) in drop zone'); 
+            ev.preventDefault();
+        }
+
+
+    </script>
+</body>
+
+</html>

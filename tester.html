@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Card Animasyonu</title>
+</head>
+<body>
+    <style>body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+    
+    .card {
+        width: 300px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transform: perspective(1000px) rotateY(0deg);
+        transition: transform 0.5s;
+    }
+    
+    .card-content {
+        text-align: center;
+        padding: 20px;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+    }
+    
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .card:hover {
+        transform: perspective(1000px) rotateY(20deg);
+    }
+    
+    .card-content:hover {
+        transform: rotateY(-20deg);
+    }
+    
+    
+    </style>
+    <div class="card">
+        <div class="card-content">
+            <img src="image.jpg" alt="Resim">
+            <p class="card-text">Bu bir kart animasyonu örneğidir.</p>
+        </div>
+    </div>
+    <script>const card = document.getElementById("myCard");
+        const animateButton = document.getElementById("animateButton");
+        
+        animateButton.addEventListener("click", () => {
+            card.style.transform = "scale(1.1)";
+        });
+        
+        card.addEventListener("transitionend", () => {
+            card.style.transform = "scale(1)";
+        });
+        </script>
+</body>
+</html>

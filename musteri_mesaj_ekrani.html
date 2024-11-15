@@ -1,0 +1,2797 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title></title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/favicon.png"
+    />
+
+    <!-- CSS
+	============================================ -->
+
+    <!-- Vendor CSS (Icon Font) -->
+    <!--
+    <link rel="stylesheet" href="assets/css/vendor/font-awesome-pro.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="assets/css/vendor/muli-font.css"> -->
+
+    <!-- Plugins CSS (All Plugins Files) -->
+    <!--
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/animate.css">
+    <link rel="stylesheet" href="assets/css/plugins/aos.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/plugins/jquery.animatedheadline.css">
+     -->
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/daterangepicker.css" />
+    <link rel="stylesheet" href="assets/css/plugins/slick.css" />
+    <link rel="stylesheet" href="assets/css/plugins/slick-theme.css" />
+    <!-- <link rel="stylesheet" href="assets/css/style.min.css">-->
+
+    <style>
+      /*
+ * Note that this is toastr v2.1.3, the "latest" version in url has no more maintenance,
+ * please go to https://cdnjs.com/libraries/toastr.js and pick a certain version you want to use,
+ * make sure you copy the url from the website since the url may change between versions.
+ * */
+      .toast-title {
+        font-weight: 700;
+      }
+      .toast-message {
+        -ms-word-wrap: break-word;
+        word-wrap: break-word;
+      }
+      .toast-message a,
+      .toast-message label {
+        color: #fff;
+      }
+      .toast-message a:hover {
+        color: #ccc;
+        text-decoration: none;
+      }
+      .toast-close-button {
+        position: relative;
+        right: -0.3em;
+        top: -0.3em;
+        float: right;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        -webkit-text-shadow: 0 1px 0 #fff;
+        text-shadow: 0 1px 0 #fff;
+        opacity: 0.8;
+        -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+        filter: alpha(opacity=80);
+        line-height: 1;
+      }
+      .toast-close-button:focus,
+      .toast-close-button:hover {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        opacity: 0.4;
+        -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+        filter: alpha(opacity=40);
+      }
+      .rtl .toast-close-button {
+        left: -0.3em;
+        float: left;
+        right: 0.3em;
+      }
+      button.toast-close-button {
+        padding: 0;
+        cursor: pointer;
+        background: 0 0;
+        border: 0;
+        -webkit-appearance: none;
+      }
+      .toast-top-center {
+        top: 0;
+        right: 0;
+        width: 100%;
+      }
+      .toast-bottom-center {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+      }
+      .toast-top-full-width {
+        top: 0;
+        right: 0;
+        width: 100%;
+      }
+      .toast-bottom-full-width {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+      }
+      .toast-top-left {
+        top: 12px;
+        left: 12px;
+      }
+      .toast-top-right {
+        top: 12px;
+        right: 12px;
+      }
+      .toast-bottom-right {
+        right: 12px;
+        bottom: 12px;
+      }
+      .toast-bottom-left {
+        bottom: 12px;
+        left: 12px;
+      }
+      #toast-container {
+        position: fixed;
+        z-index: 999999;
+        pointer-events: none;
+      }
+      #toast-container * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      #toast-container > div {
+        position: relative;
+        pointer-events: auto;
+        overflow: hidden;
+        margin: 0 0 6px;
+        padding: 15px 15px 15px 50px;
+        width: 300px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        background-position: 15px center;
+        background-repeat: no-repeat;
+        -moz-box-shadow: 0 0 12px #999;
+        -webkit-box-shadow: 0 0 12px #999;
+        box-shadow: 0 0 12px #999;
+        color: #fff;
+        opacity: 0.8;
+        -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+        filter: alpha(opacity=80);
+      }
+      #toast-container > div.rtl {
+        direction: rtl;
+        padding: 15px 50px 15px 15px;
+        background-position: right 15px center;
+      }
+      #toast-container > div:hover {
+        -moz-box-shadow: 0 0 12px #000;
+        -webkit-box-shadow: 0 0 12px #000;
+        box-shadow: 0 0 12px #000;
+        opacity: 1;
+        -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        filter: alpha(opacity=100);
+        cursor: pointer;
+      }
+      #toast-container > .toast-info {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=) !important;
+      }
+      #toast-container > .toast-error {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=) !important;
+      }
+      #toast-container > .toast-success {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhLY2AYBfQMgf///3P8+/evAIgvA/FsIF+BavYDDWMBGroaSMMBiE8VC7AZDrIFaMFnii3AZTjUgsUUWUDA8OdAH6iQbQEhw4HyGsPEcKBXBIC4ARhex4G4BsjmweU1soIFaGg/WtoFZRIZdEvIMhxkCCjXIVsATV6gFGACs4Rsw0EGgIIH3QJYJgHSARQZDrWAB+jawzgs+Q2UO49D7jnRSRGoEFRILcdmEMWGI0cm0JJ2QpYA1RDvcmzJEWhABhD/pqrL0S0CWuABKgnRki9lLseS7g2AlqwHWQSKH4oKLrILpRGhEQCw2LiRUIa4lwAAAABJRU5ErkJggg==) !important;
+      }
+      #toast-container > .toast-warning {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII=) !important;
+      }
+      #toast-container.toast-bottom-center > div,
+      #toast-container.toast-top-center > div {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #toast-container.toast-bottom-full-width > div,
+      #toast-container.toast-top-full-width > div {
+        width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .toast {
+        background-color: #030303;
+      }
+      .toast-success {
+        background-color: #51a351;
+      }
+      .toast-error {
+        background-color: #bd362f;
+      }
+      .toast-info {
+        background-color: #2f96b4;
+      }
+      .toast-warning {
+        background-color: #f89406;
+      }
+      .toast-progress {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        background-color: #000;
+        opacity: 0.4;
+        -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+        filter: alpha(opacity=40);
+      }
+      @media all and (max-width: 240px) {
+        #toast-container > div {
+          padding: 8px 8px 8px 50px;
+          width: 11em;
+        }
+        #toast-container > div.rtl {
+          padding: 8px 50px 8px 8px;
+        }
+        #toast-container .toast-close-button {
+          right: -0.2em;
+          top: -0.2em;
+        }
+        #toast-container .rtl .toast-close-button {
+          left: -0.2em;
+          right: 0.2em;
+        }
+      }
+      @media all and (min-width: 241px) and (max-width: 480px) {
+        #toast-container > div {
+          padding: 8px 8px 8px 50px;
+          width: 18em;
+        }
+        #toast-container > div.rtl {
+          padding: 8px 50px 8px 8px;
+        }
+        #toast-container .toast-close-button {
+          right: -0.2em;
+          top: -0.2em;
+        }
+        #toast-container .rtl .toast-close-button {
+          left: -0.2em;
+          right: 0.2em;
+        }
+      }
+      @media all and (min-width: 481px) and (max-width: 768px) {
+        #toast-container > div {
+          padding: 15px 15px 15px 50px;
+          width: 25em;
+        }
+        #toast-container > div.rtl {
+          padding: 15px 50px 15px 15px;
+        }
+      }
+    </style>
+
+    <script src="assets/js/plugins/moment.min.js"></script>
+  </head>
+
+  <body style="background-color: #10161a">
+    <header class="pt-2">
+      <marquee class="text-white"
+        ><img class="img-fluid" src="assets/images/icons/fut-coin32.png" />
+        KNIGHT ONLINE İLAN KATEGORİSİNDE %1 KOMİSYON!!
+        <img class="img-fluid" src="assets/images/icons/fut-coin32.png"
+      /></marquee>
+    </header>
+    <header class="pt-2 pb-2 text-center text-white d-none">
+      <img class="img-fluid" src="assets/images/icons/fut-coin32.png" />
+      ULTİCOİN İLAN KATEGORİSİNDE %5 KOMİSYON!!
+      <img class="img-fluid" src="assets/images/icons/fut-coin32.png" />
+    </header>
+    <div id="page" class="section">
+      <!-- Header Section Start -->
+      <div class="header-section header-transparent sticky-header section">
+        <div class="header-inner">
+          <div class="container-fluid position-relative">
+            <div class="row justify-content-between align-items-center">
+              <!-- Header Logo Start -->
+              <div class="col-xl-2 col-auto order-0">
+                <div class="header-logo">
+                  <a href="index.html">
+                    <img
+                      src="assets/images/logo/logo.png"
+                      class="img-fluid"
+                      alt="logo"
+                    />
+                  </a>
+                </div>
+              </div>
+              <!-- Header Logo End -->
+
+              <!-- Header Main Menu Start -->
+              <div
+                class="col-auto col-xl d-flex align-items-center justify-content-xl-center justify-content-end order-2 order-xl-1"
+              >
+                <div class="menu-column-area d-none d-xl-block position-static">
+                  <nav class="site-main-menu">
+                    <ul>
+                      <li class="has-children">
+                        <a href="fifa-coins.html"
+                          ><span class="menu-text">Fifa Coin Satın Al</span></a
+                        >
+                        <span class="menu-toggle"
+                          ><i class="far fa-angle-down"></i
+                        ></span>
+                        <ul class="sub-menu">
+                          <li>
+                            <a href="yontem.html"
+                              ><span class="menu-text">PlayStation 4</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="yontem.html"
+                              ><span class="menu-text">PlayStation 5</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="yontem.html"
+                              ><span class="menu-text">Xbox One</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="yontem.html"
+                              ><span class="menu-text">Xbox Series X|S</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="yontem.html"
+                              ><span class="menu-text">PC</span></a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="has-children">
+                        <a href="hesaplar_platform.html"
+                          ><span class="menu-text">Hesaplar</span></a
+                        >
+                        <span class="menu-toggle"
+                          ><i class="far fa-angle-down"></i
+                        ></span>
+                        <ul class="sub-menu">
+                          <li>
+                            <a href="hesaplar.html"
+                              ><span class="menu-text">PlayStation 4</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="hesaplar.html"
+                              ><span class="menu-text">PlayStation 5</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="hesaplar.html"
+                              ><span class="menu-text">Xbox One</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="hesaplar.html"
+                              ><span class="menu-text">Xbox Series X|S</span></a
+                            >
+                          </li>
+                          <li>
+                            <a href="hesaplar.html"
+                              ><span class="menu-text">PC</span></a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#!"><span class="menu-text">Boosting</span></a>
+                      </li>
+                      <li>
+                        <a href="#!"
+                          ><span class="menu-text">Değerlendirmeler</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href="SSS.html"
+                          ><span class="menu-text">SSS</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href="blog.html"
+                          ><span class="menu-text">Blog</span></a
+                        >
+                      </li>
+                      <li>
+                        <a href="#!"><span class="menu-text">İletişim</span></a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <!-- Header Search Start -->
+                <div class="header-search-area ml-xl-7 ml-0">
+                  <!-- Header Login Start -->
+                  <div class="header-search">
+                    <a href="javascript:void(0)" class="header-search-toggle"
+                      ><i class="pe-7s-search pe-2x pe-va"></i
+                    ></a>
+                  </div>
+                  <!-- Header Login End -->
+                </div>
+                <!-- Header Search End -->
+
+                <!-- Header Mobile Menu Toggle Start -->
+                <div class="header-mobile-menu-toggle d-xl-none ml-sm-2">
+                  <button class="toggle">
+                    <i class="icon-top"></i>
+                    <i class="icon-middle"></i>
+                    <i class="icon-bottom"></i>
+                  </button>
+                </div>
+                <!-- Header Mobile Menu Toggle End -->
+              </div>
+              <!-- Header Main Menu End -->
+
+              <!-- Header Right Start -->
+              <div
+                class="col-xl-3 col d-none d-sm-flex d-flex align-items-center justify-content-xl-center justify-content-between order-1 order-xl-2"
+              >
+                <div
+                  class="menu-column-area d-none d-xl-block position-static me-2"
+                >
+                  <nav class="site-main-menu language-main-menu">
+                    <ul>
+                      <li class="has-children">
+                        <a href="#!"
+                          ><span class="menu-text"
+                            ><img
+                              class="img-fluid"
+                              src="assets/images/icons/turkey.png" /></span
+                        ></a>
+                        <span class="menu-toggle"
+                          ><i class="far fa-angle-down"></i
+                        ></span>
+                        <ul class="sub-menu">
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text"
+                                ><i class="sl-flag flag-usa me-2"
+                                  ><div></div
+                                ></i>
+                                English</span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text"
+                                ><i class="sl-flag flag-ar me-2"><div></div></i>
+                                العربية</span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text"
+                                ><i class="sl-flag flag-de me-2"><div></div></i>
+                                Deutsch</span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text"
+                                ><i class="sl-flag flag-es me-2"><div></div></i>
+                                español</span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text"
+                                ><i class="sl-flag flag-fr me-2"><div></div></i>
+                                français</span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text"
+                                ><i class="sl-flag flag-it me-2"><div></div></i>
+                                italiano</span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text"
+                                ><i class="sl-flag flag-nl me-2"><div></div></i>
+                                Nederlands</span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text"
+                                ><i class="sl-flag flag-tr me-2"><div></div></i>
+                                Türkçe</span
+                              ></a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="has-children">
+                        <a href="#!"><span class="menu-text">TRY</span></a>
+                        <span class="menu-toggle"
+                          ><i class="far fa-angle-down"></i
+                        ></span>
+                        <ul class="sub-menu">
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text justify-content-between"
+                                ><div>US Dollar</div>
+                                <div>USD</div></span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text justify-content-between"
+                                ><div>Euro</div>
+                                <div>EUR</div></span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text justify-content-between"
+                                ><div>Pound Sterling</div>
+                                <div>GBP</div></span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text justify-content-between"
+                                ><div>Australian Dollar</div>
+                                <div>AUD</div></span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text justify-content-between"
+                                ><div>Saudi Riyal</div>
+                                <div>SAR</div></span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text justify-content-between"
+                                ><div>Emirati Dirhams</div>
+                                <div>AED</div></span
+                              ></a
+                            >
+                          </li>
+                          <li>
+                            <a href="#!"
+                              ><span class="menu-text justify-content-between"
+                                ><div>Turkish Lira</div>
+                                <div>TRY</div></span
+                              ></a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <a href="#"
+                  ><button class="btn-shake"><span>Giriş Yap</span></button></a
+                >
+              </div>
+              <!-- Header Right End -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Header Section End -->
+
+      <!-- Main Search Start -->
+      <div class="main-search-active">
+        <div class="sidebar-search-icon">
+          <button class="search-close"><i class="pe-7s-close"></i></button>
+        </div>
+        <div class="sidebar-search-input">
+          <form action="#">
+            <div class="form-search">
+              <input
+                id="search"
+                class="input-text"
+                value=""
+                placeholder=""
+                type="search"
+              />
+              <button>
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </form>
+          <p class="form-description">
+            Aramak için enter'a veya kapatmak için ESC'ye basın
+          </p>
+        </div>
+      </div>
+      <!-- Main Search End -->
+
+      <div class="clearfix pt-30 pt-sm-40 pb-10 pb-sm-30">
+        <div class="container">
+          <div
+            class="section-title text-center mb-12 aos-init aos-animate"
+            data-aos="fade-up"
+          >
+            <h2 class="title">Canlı Destek</h2>
+            <hr />
+          </div>
+          <div class="row mb-10">
+            <div class="menu-column-area">
+              <nav class="site-main-menu">
+                <ul>
+                  <li>
+                    <a href="musteri_profil.html"
+                      ><span class="menu-text">Profilim</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="bilgilerim.html"
+                      ><span class="menu-text">Bilgilerim</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="destek_talebi_olustur.html"
+                      ><span class="menu-text">Destek Talebi Oluştur</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="destek_taleplerim.html"
+                      ><span class="menu-text">Destek Taleplerim</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="odeme_bildirimlerim.html"
+                      ><span class="menu-text">Ödeme Bildirimlerim</span></a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="container customer-messages">
+          <div class="tile tile-alt" id="messages-main">
+            <div class="ms-menu">
+              <!-- Aktif Siparişler -->
+              <div class="ms-user d-flex justify-content-between">
+                <div>Kişiler</div>
+                <div
+                  class="d-block d-xl-none position-relative"
+                  id="ms-menu-trigger"
+                >
+                  <i class="fa fa-bars"></i>
+                </div>
+              </div>
+
+              <div class="list-group lg-alt">
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <p class="list-group-item-heading">O***** K*****</p>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">A***** T*****</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">Marse Walter</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">A***** T*****</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">Marse Walter</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">A***** T*****</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">Marse Walter</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <p class="list-group-item-heading">O***** K*****</p>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">A***** T*****</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">Marse Walter</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">A***** T*****</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">Marse Walter</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">A***** T*****</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">Marse Walter</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+
+                <a class="list-group-item media" href="">
+                  <div class="pull-left me-2">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                      alt=""
+                      class="img-avatar"
+                    />
+                  </div>
+                  <div class="media-body">
+                    <div class="list-group-item-heading">A***** T*****</div>
+                    <small class="list-group-item-text c-gray"
+                      >Sp No: 5487522</small
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="ms-body">
+              <div
+                style="gap: 20px"
+                class="action-header justify-content-between flex-wrap px-10 px-xl-5"
+              >
+                <div class="d-block d-xl-none" id="ms-menu-trigger">
+                  <i class="fa fa-bars"></i>
+                </div>
+                <div class="d-flex flex-column">
+                  <div
+                    class="pull-left hidden-xs d-flex mb-0 mb-sm-5 mb-xxl-0 pl-5 pl-sm-0"
+                  >
+                    <a class="status d-none d-sm-block" href="#!">
+                      <img
+                        src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                        alt=""
+                        class="img-avatar"
+                      />
+                    </a>
+                    <div class="d-flex flex-column mx-2">
+                      <span>Oğuzhan Kıran</span>
+                      <span class="m-plaform">Sipariş No: 5487522</span>
+                      <span class="m-plaform"
+                        >Platform :
+                        <svg
+                          xmlns:dc="http://purl.org/dc/elements/1.1/"
+                          xmlns:cc="http://creativecommons.org/ns#"
+                          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                          xmlns:svg="http://www.w3.org/2000/svg"
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                          id="svg41117"
+                          viewBox="0 0 200 154.81912"
+                          height="20"
+                          width="20"
+                          preserveAspectRatio="xMidYMid"
+                        >
+                          <path
+                            style="
+                              fill: #fff;
+                              fill-opacity: 1;
+                              fill-rule: evenodd;
+                            "
+                            class="cls-2"
+                            id="path-1"
+                            d="m 197.23914,117.96194 c -3.8677,4.8796 -13.34356,8.36053 -13.34356,8.36053 0,0 -70.49109,25.31994 -70.49109,25.31994 0,0 0,-18.67289 0,-18.67289 0,0 51.87665,-18.48401 51.87665,-18.48401 5.887,-2.10924 6.79096,-5.09097 2.00581,-6.65604 -4.77616,-1.56957 -13.42451,-1.11983 -19.31601,0.99841 0,0 -34.56645,12.17426 -34.56645,12.17426 0,0 0,-19.37898 0,-19.37898 0,0 1.99232,-0.6746 1.99232,-0.6746 0,0 9.98856,-3.534896 24.03371,-5.09097 14.04515,-1.547081 31.24291,0.211374 44.74389,5.32933 15.21445,4.80764 16.92793,11.89543 13.06473,16.77502 z M 120.11451,86.165853 c 0,0 0,-47.752601 0,-47.752601 0,-5.608163 -1.03439,-10.771093 -6.29626,-12.232725 -4.0296,-1.290734 -6.53012,2.45104 -6.53012,8.054706 0,0 0,119.583887 0,119.583887 0,0 -32.250314,-10.23591 -32.250314,-10.23591 0,0 0,-142.58321 0,-142.58321 13.712343,2.54549 33.689454,8.56291 44.429074,12.18326 27.31226,9.376917 36.57225,21.047482 36.57225,47.343343 0,25.630256 -15.82159,35.344478 -35.92463,25.63925 z M 15.862004,131.01768 C 0.24279269,126.6193 -2.3566614,117.45375 4.7626047,112.17389 c 6.5795883,-4.8751 17.7689333,-8.54492 17.7689333,-8.54492 0,0 46.241498,-16.442224 46.241498,-16.442224 0,0 0,18.744854 0,18.744854 0,0 -33.275709,11.90892 -33.275709,11.90892 -5.878004,2.10924 -6.781967,5.09547 -2.005807,6.66054 4.780657,1.56506 13.433512,1.11983 19.320511,-0.99391 0,0 15.961005,-5.79256 15.961005,-5.79256 0,0 0,16.77053 0,16.77053 -1.011893,0.17989 -2.140724,0.35978 -3.184104,0.53518 -15.965505,2.60845 -32.969893,1.5201 -49.726928,-4.00262 z m 171.105246,7.42508 c 2.0193,0 3.91267,0.78254 5.33832,2.22618 1.42566,1.42115 2.21269,3.31903 2.21269,5.33383 0,2.02379 -0.78703,3.91267 -2.21269,5.33383 -1.42565,1.43464 -3.31902,2.21718 -5.33832,2.21718 -2.0193,0 -3.90818,-0.78254 -5.33833,-2.21718 -1.42565,-1.42116 -2.20818,-3.31004 -2.20818,-5.33383 0,-4.16453 3.38198,-7.56001 7.54651,-7.56001 z m -6.27827,7.56001 c 0,1.6775 0.65211,3.25606 1.83941,4.43436 1.18279,1.19629 2.76585,1.8439 4.43886,1.8439 3.46743,0 6.27826,-2.81532 6.27826,-6.27826 0,-1.682 -0.64761,-3.26056 -1.8394,-4.44336 -1.1828,-1.19629 -2.76586,-1.83941 -4.43886,-1.83941 -1.67301,0 -3.25607,0.64312 -4.43886,1.83941 -1.1873,1.1828 -1.83941,2.76136 -1.83941,4.44336 z m 8.55841,-4.07008 c 0.82751,0.36428 1.24576,1.06586 1.24576,2.06427 0,0.5127 -0.10794,0.94444 -0.3283,1.28174 -0.15741,0.24285 -0.38228,0.44074 -0.63413,0.61163 0.19788,0.11694 0.37328,0.25635 0.50371,0.41826 0.17988,0.23386 0.28332,0.60713 0.29682,1.11533 0,0 0.0405,1.07486 0.0405,1.07486 0.0135,0.28783 0.0315,0.5082 0.0765,0.64312 0.045,0.19788 0.13042,0.32381 0.23835,0.36429 0,0 0.11244,0.054 0.11244,0.054 0,0 0,0.12143 0,0.12143 0,0 0,0.18439 0,0.18439 0,0 0,0.18439 0,0.18439 0,0 -0.18439,0 -0.18439,0 0,0 -1.33571,0 -1.33571,0 0,0 -0.10793,0 -0.10793,0 0,0 -0.054,-0.0944 -0.054,-0.0944 -0.045,-0.0899 -0.0764,-0.19338 -0.10793,-0.3283 -0.0225,-0.12143 -0.045,-0.3328 -0.0585,-0.65661 0,0 -0.0675,-1.33571 -0.0675,-1.33571 -0.018,-0.46322 -0.1754,-0.75105 -0.47222,-0.90396 -0.18439,-0.0854 -0.49021,-0.12592 -0.90396,-0.12592 0,0 -2.28914,0 -2.28914,0 0,0 0,3.26056 0,3.26056 0,0 0,0.18439 0,0.18439 0,0 -0.18889,0 -0.18889,0 0,0 -1.08836,0 -1.08836,0 0,0 -0.18438,0 -0.18438,0 0,0 0,-0.18439 0,-0.18439 0,0 0,-8.03672 0,-8.03672 0,0 0,-0.18439 0,-0.18439 0,0 0.18438,0 0.18438,0 0,0 3.71929,0 3.71929,0 0.63863,0 1.17381,0.0944 1.58756,0.28782 z m -4.0296,3.38648 c 0,0 2.32961,0 2.32961,0 0.46772,0 0.841,-0.0855 1.10634,-0.26084 0.24286,-0.1754 0.35979,-0.49471 0.35979,-0.95793 0,-0.5037 -0.1664,-0.83201 -0.51719,-1.0074 -0.19338,-0.0944 -0.46323,-0.14841 -0.80503,-0.14841 0,0 -2.47352,0 -2.47352,0 0,0 0,2.37458 0,2.37458 z"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex flex-column w-50 w-100-web">
+                  <span>Toplam Miktar / Kalan Miktar</span>
+                  <div class="progress">
+                    <div
+                      class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                      role="progressbar"
+                      style="width: 80%"
+                      aria-valuenow="80"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      80%
+                    </div>
+                    <div
+                      class="progress-bar bg-dark progress-bar-striped progress-bar-animated"
+                      role="progressbar"
+                      style="width: 20%"
+                      aria-valuenow="2"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      20%
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href="javascript:void(0)"
+                  data-toggle="modal"
+                  data-target="#teklif_picture"
+                  class="rbbtn rbblue text-center pt-1 pb-1"
+                  >Teklif Detayları</a
+                >
+
+                <div class="d-block d-xl-none" id="ms-right-menu-trigger">
+                  <i class="fa fa-bars"></i>
+                </div>
+              </div>
+              <!--Tabs Start-->
+              <div class="tabs-to-dropdown mb-3">
+                <div
+                  class="nav-wrapper d-flex align-items-center justify-content-center"
+                >
+                  <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link active"
+                        id="musteri-tab"
+                        data-toggle="pill"
+                        href="#musteri"
+                        role="tab"
+                        aria-controls="musteri"
+                        aria-selected="true"
+                        >Müşteri</a
+                      >
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link"
+                        id="tedarikci-tab"
+                        data-toggle="pill"
+                        href="#tedarikci"
+                        role="tab"
+                        aria-controls="tedarikci"
+                        aria-selected="false"
+                        >Tedarikçi</a
+                      >
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link"
+                        id="tedarikci1-tab"
+                        data-toggle="pill"
+                        href="#tedarikci1"
+                        role="tab"
+                        aria-controls="tedarikci1"
+                        aria-selected="false"
+                        >Tedarikçi 2</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="tab-content" id="pills-tabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="musteri"
+                    role="tabpanel"
+                    aria-labelledby="musteri-tab"
+                  >
+                    <div class="action-body">
+                      <div>
+                        <div class="message-feed media">
+                          <div class="pull-left">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              Merhaba Siparişimi Oluşturdum Aktarımı Yapabilir
+                              miyiz ?
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> 20/02/2015 -
+                              09:00</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed right">
+                          <div class="pull-right">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              Tabii göndereceğim, görseldeki kartın marketteki
+                              en ucuzunu alıp baslangıc 42000 hemen al 55.000 1
+                              saat koyup fotoğraf atar mısınız ?
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> 20/02/2015 -
+                              09:30</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed media">
+                          <div class="pull-left">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">Tabiki Hallediyorum</div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> 20/02/2015 -
+                              09:33</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed right">
+                          <div class="pull-right">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              İşleminizi görebiliyorum, aktarımı başlatıyorum bu
+                              süre zarfında lütfen herhangi bir işlem
+                              yapmayınız.
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> Bugün -
+                              10:10</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed media">
+                          <div class="pull-left">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              Atarım İçin teşekkür ediyorum, bir aktarımım daha
+                              olacak siparişimi oluşturdum onun için de
+                              işlemlere hızlıca başlıyabilir miyiz ?
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> Bugün -
+                              10:24</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed right">
+                          <div class="pull-right">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              İşleminizi görebiliyorum, aktarımı başlatıyorum bu
+                              süre zarfında lütfen herhangi bir işlem
+                              yapmayınız.
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> Bugün -
+                              10:10</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed media">
+                          <div class="pull-left">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              Atarım İçin teşekkür ediyorum, bir aktarımım daha
+                              olacak siparişimi oluşturdum onun için de
+                              işlemlere hızlıca başlıyabilir miyiz ?
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> Bugün -
+                              10:24</small
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="tedarikci"
+                    role="tabpanel"
+                    aria-labelledby="tedarikci-tab"
+                  >
+                    <div class="action-body">
+                      <div>
+                        <div class="message-feed media">
+                          <div class="pull-left">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              Merhaba Siparişimi Oluşturdum Aktarımı Yapabilir
+                              miyiz ?
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> 20/02/2015 -
+                              09:00</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed right">
+                          <div class="pull-right">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              Tabii göndereceğim, görseldeki kartın marketteki
+                              en ucuzunu alıp baslangıc 42000 hemen al 55.000 1
+                              saat koyup fotoğraf atar mısınız ?
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> 20/02/2015 -
+                              09:30</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed media">
+                          <div class="pull-left">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">Tabiki Hallediyorum</div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> 20/02/2015 -
+                              09:33</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed right">
+                          <div class="pull-right">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              İşleminizi görebiliyorum, aktarımı başlatıyorum bu
+                              süre zarfında lütfen herhangi bir işlem
+                              yapmayınız.
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> Bugün -
+                              10:10</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed media">
+                          <div class="pull-left">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              Atarım İçin teşekkür ediyorum, bir aktarımım daha
+                              olacak siparişimi oluşturdum onun için de
+                              işlemlere hızlıca başlıyabilir miyiz ?
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> Bugün -
+                              10:24</small
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="tedarikci1"
+                    role="tabpanel"
+                    aria-labelledby="tedarikci1-tab"
+                  >
+                    <div class="action-body">
+                      <div>
+                        <div class="message-feed media">
+                          <div class="pull-left">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              Merhaba Siparişimi Oluşturdum Aktarımı Yapabilir
+                              miyiz ?
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> 20/02/2015 -
+                              09:00</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed right">
+                          <div class="pull-right">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              Tabii göndereceğim, görseldeki kartın marketteki
+                              en ucuzunu alıp baslangıc 42000 hemen al 55.000 1
+                              saat koyup fotoğraf atar mısınız ?
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> 20/02/2015 -
+                              09:30</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed right">
+                          <div class="pull-right">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <a
+                              href="#!"
+                              data-toggle="modal"
+                              data-target="#picture_popup"
+                              ><i class="fas fa-share"></i
+                            ></a>
+                            <div class="mf-content">
+                              <img
+                                class="img-fluid"
+                                width="350"
+                                height="350"
+                                src="assets/images/kanit.jpeg"
+                                alt="..."
+                              />
+                            </div>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> Bugün -
+                              10:10</small
+                            >
+                          </div>
+                        </div>
+
+                        <div class="message-feed media">
+                          <div class="pull-left">
+                            <img
+                              src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              alt=""
+                              class="img-avatar"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <div class="mf-content">
+                              <img
+                                class="img-fluid"
+                                width="350"
+                                height="350"
+                                src="assets/images/kanit.jpeg"
+                                alt="..."
+                              />
+                            </div>
+                            <a
+                              href="#!"
+                              data-toggle="modal"
+                              data-target="#picture_popup"
+                              ><i class="fas fa-share"></i
+                            ></a>
+                            <small class="mf-date"
+                              ><i class="fa fa-clock-o"></i> 20/02/2015 -
+                              09:33</small
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-end">
+                    <div class="paperclip">
+                      <a href="#!"
+                        ><i class="fal fa-paperclip font-size24"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Tabs End-->
+
+              <div class="msb-reply">
+                <textarea placeholder="Mesajınızı Yazınız..."></textarea>
+                <button><i class="fad fa-paper-plane"></i></button>
+              </div>
+            </div>
+
+            <div id="ms-right-menu" class="ms-right-menu">
+              <div class="list-group lg-alt">
+                <div id="onOffScreen" class="list-group-item media text-white">
+                  <div class="toggle">
+                    <input type="checkbox" id="toggle" />
+                    <label for="toggle"></label>
+                  </div>
+                  <div
+                    style="
+                      margin-top: 15px;
+                      text-align: center;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    <span style="font-size: 18px" class="font-weight-bold"
+                      >Hesaptayım</span
+                    >
+                    <p class="font-italic" style="font-size: 12px; color: #fff">
+                      Müşteri, hesaba giriş yapmaması yönünde bildirim
+                      alacaktır.
+                    </p>
+                    <div class="d-block d-xl-none" id="ms-right-menu-trigger">
+                      <i class="fa fa-bars"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-group lg-alt">
+                <div class="list-group-item media text-white">
+                  <div style="text-align: center">
+                    <span style="font-size: 18px" class="font-weight-bold"
+                      >Dürt</span
+                    >
+                    <p class="font-italic" style="font-size: 12px; color: #fff">
+                      Kullanıcıyı mail veya bildirim aracılığı ile
+                      bilgilendirebilirsiniz.
+                    </p>
+                    <!-- <a
+                      id="poke"
+                      href="javascript:void(0)"
+                      class="rbbtn rbgreen text-center float-right w-100"
+                      >Dürt</a
+                    > -->
+                    <button
+                      id="poke-7"
+                      data-chat-id="7"
+                      type="button"
+                      class="poke-btn rbbtn rbgreen text-center float-right w-100 bg-transparent"
+                    >
+                      Dürt
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- New List Group with Table -->
+              <div class="list-group-item media text-white">
+                <div
+                  style="gap: 10px"
+                  class="d-flex justify-content-between align-items-center"
+                >
+                  <span style="white-space: normal"
+                    >Leveling Through the Main Campaign</span
+                  >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg-success"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                      >
+                        <circle
+                          class="success-circle-outline"
+                          cx="12"
+                          cy="12"
+                          r="11.5"
+                        />
+                        <circle
+                          class="success-circle-fill"
+                          cx="12"
+                          cy="12"
+                          r="11.5"
+                        />
+                        <polyline
+                          class="success-tick"
+                          points="17,8.5 9.5,15.5 7,13"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="list-group-item media text-white">
+                <div
+                  style="gap: 10px"
+                  class="d-flex justify-content-between align-items-center"
+                >
+                  <span style="white-space: normal"
+                    >Additional Side Quests</span
+                  >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg-error"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                      >
+                        <circle
+                          class="error-circle-outline"
+                          cx="12"
+                          cy="12"
+                          r="11.5"
+                        />
+                        <circle
+                          class="error-circle-fill"
+                          cx="12"
+                          cy="12"
+                          r="11.5"
+                        />
+                        <line
+                          class="error-cross"
+                          x1="8"
+                          y1="8"
+                          x2="16"
+                          y2="16"
+                        />
+                        <line
+                          class="error-cross"
+                          x1="16"
+                          y1="8"
+                          x2="8"
+                          y2="16"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="list-group-item media text-white">
+                <div
+                  style="gap: 10px"
+                  class="d-flex justify-content-between align-items-center"
+                >
+                  <span style="white-space: normal"
+                    >Character Customization Options</span
+                  >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg-success"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                      >
+                        <circle
+                          class="success-circle-outline"
+                          cx="12"
+                          cy="12"
+                          r="11.5"
+                        />
+                        <circle
+                          class="success-circle-fill"
+                          cx="12"
+                          cy="12"
+                          r="11.5"
+                        />
+                        <polyline
+                          class="success-tick"
+                          points="17,8.5 9.5,15.5 7,13"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="list-group-item media text-white">
+                <div
+                  style="gap: 10px"
+                  class="d-flex justify-content-between align-items-center"
+                >
+                  <span style="white-space: normal"
+                    >Exploration and Discovery</span
+                  >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg-error"
+                      viewBox="0 0 24 24"
+                    >
+                      <g
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                      >
+                        <circle
+                          class="error-circle-outline"
+                          cx="12"
+                          cy="12"
+                          r="11.5"
+                        />
+                        <circle
+                          class="error-circle-fill"
+                          cx="12"
+                          cy="12"
+                          r="11.5"
+                        />
+                        <line
+                          class="error-cross"
+                          x1="8"
+                          y1="8"
+                          x2="16"
+                          y2="16"
+                        />
+                        <line
+                          class="error-cross"
+                          x1="16"
+                          y1="8"
+                          x2="8"
+                          y2="16"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-group lg-alt">
+                <div class="list-group-item media text-white">
+                  <div class="position-relative" style="text-align: center">
+                    <span style="font-size: 18px" class="font-weight-bold"
+                      >Başarılı</span
+                    >
+                    <p class="font-italic" style="font-size: 12px; color: #fff">
+                      Tüm işlemleriniz tamamlandıysa işlemi tamamladım butonuna
+                      tıklayabilirsiniz.
+                    </p>
+                    <a
+                      id="allDoneButton"
+                      class="rbbtn rbgreen text-center float-right w-100"
+                    >
+                      İşlemi Tamamladım
+                    </a>
+
+                    <!-- Confirmation Tooltip -->
+                    <div
+                      id="confirmationTooltip"
+                      style="top: 135px; display: none"
+                      class="tooltip fade bs-tooltip-top show"
+                      role="tooltip"
+                    >
+                      <div class="tooltip-arrow"></div>
+                      <div class="tooltip-inner">
+                        Devam istediğinize emin misiniz?
+                        <div
+                          style="gap: 15px"
+                          class="mt-2 d-flex justify-content-center"
+                        >
+                          <button id="confirmYes" class="btn btn-success">
+                            Evet
+                          </button>
+                          <button id="confirmNo" class="btn btn-danger">
+                            Hayır
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <style>
+                      #confirmationTooltip.tooltip {
+                        opacity: 1;
+                      }
+                      #confirmationTooltip .tooltip-arrow {
+                        top: 0;
+                        rotate: 180deg;
+                        left: 50%;
+                        transform: translateX(50%);
+                      }
+                      #confirmationTooltip .tooltip-arrow::before {
+                        border-top-color: #0d6efd;
+                      }
+                      #confirmationTooltip .tooltip-inner {
+                        background-color: #0d6efd;
+                        border-radius: 0;
+                      }
+                      #confirmationTooltip .tooltip-inner button {
+                        font-size: 14px;
+                        width: 40px;
+                        height: 30px;
+                      }
+                    </style>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--İşlemi tamamladım-->
+
+      <!-- Confirmation Modal for Success -->
+      <div
+        class="modal fade"
+        id="successModal"
+        tabindex="-1"
+        aria-labelledby="successModalLabel"
+        aria-hidden="true"
+        data-backdrop="static"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="successModalLabel">
+                İşleminiz Başarıyla Tamamlandı !
+              </h5>
+            </div>
+            <div style="margin: auto" class="modal-body">
+              <img width="200" src="assets/images/hero-image/hero.png" />
+            </div>
+            <div class="modal-footer">
+              <button
+                id="modalCloseButton"
+                type="button"
+                class="btn btn-success w-100"
+              >
+                Profilim
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Müşterinin İlettiği Görsel İçin Popup -->
+      <div
+        style="background-color: rgb(0, 0, 0, 0.9)"
+        class="modal fade aktif-siparis-modal pl-0"
+        id="picture_popup"
+        data-backdrop="static"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Sipariş No : 546521
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="container"></div>
+            <div class="modal-body">
+              <img
+                src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                class="img-fluid mb-3"
+                alt="..."
+              />
+              <p class="d-flex align-items-center">
+                <span class="me-2">Teklife Basılması Gereken Miktar : </span
+                ><input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  value="300K"
+                />
+              </p>
+              <p class="d-flex align-items-center">
+                <span class="me-2">Net Geçen Miktar : </span
+                ><input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  value="280K"
+                />
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">
+                İşlemi Onayla
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Müşteriye Teklif Görselleri Popup -->
+      <div
+        style="background-color: rgb(0, 0, 0, 0.9)"
+        class="modal fade aktif-siparis-modal pl-0"
+        id="teklif_picture"
+        data-backdrop="static"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h6 class="modal-title" id="exampleModalLabel">Teklifleriniz</h6>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="container"></div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                  <a class="text-white" href="#!">
+                    <img
+                      src="https://cdn.discordapp.com/attachments/876473310844698635/977695541955817512/image0_1_1.jpeg"
+                      class="img-fluid mb-1"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Onayla</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="footer-section section"
+        style="background-color: #030e22 !important"
+      >
+        <div class="container">
+          <div class="row mb-2">
+            <div
+              class="col-xl-12 col-12 footer-col d-flex justify-content-between"
+            >
+              <img
+                style="padding: 40px 15px"
+                class="img-fluid"
+                width="200"
+                src="assets/images/logo/footer-logo.png"
+                alt="..."
+              />
+              <nav class="site-main-menu">
+                <ul>
+                  <li>
+                    <a href="#!"><span class="menu-text">Ödeme</span></a>
+                  </li>
+                  <li>
+                    <a href="#!"><span class="menu-text">Teslim</span></a>
+                  </li>
+                  <li>
+                    <a href="#!"><span class="menu-text">Bize Sat</span></a>
+                  </li>
+                  <li>
+                    <a href="#!"><span class="menu-text">Katılımcı</span></a>
+                  </li>
+                  <li>
+                    <a href="#!"
+                      ><span class="menu-text">Hüküm Ve Koşullar</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="#!"><span class="menu-text">Kişiler</span></a>
+                  </li>
+                </ul>
+              </nav>
+              <span class="d-none d-sm-block" style="width: 200px"> </span>
+            </div>
+          </div>
+
+          <div class="row copyright">
+            <div class="col-xl-4 col-12">
+              <div class="footer-social-inline">
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="#"><i class="fab fa-reddit-square"></i></a>
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+              </div>
+            </div>
+            <div class="col-xl-4 col-12">
+              <p class="">
+                © 2021 <strong>UltiCoin</strong> Tüm Hakları Saklıdır.
+              </p>
+            </div>
+            <div class="col-xl-4 col-12">
+              <div class="payment">
+                <a href="#/">
+                  <img
+                    class="img-fluid"
+                    src="assets/images/payment-methods.png"
+                    alt="Payment"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Top Start -->
+      <a href="#" class="scroll-top" id="scroll-top">
+        <i class="arrow-top fal fa-long-arrow-up"></i>
+        <i class="arrow-bottom fal fa-long-arrow-up"></i>
+      </a>
+      <!-- Scroll Top End -->
+    </div>
+
+    <div id="site-main-mobile-menu" class="site-main-mobile-menu">
+      <div class="site-main-mobile-menu-inner">
+        <div class="mobile-menu-header">
+          <div class="mobile-menu-logo">
+            <a href="index.html"
+              ><img src="assets/images/logo/logo.png" alt=""
+            /></a>
+          </div>
+          <div class="mobile-menu-close">
+            <button class="toggle">
+              <i class="icon-top"></i>
+              <i class="icon-bottom"></i>
+            </button>
+          </div>
+        </div>
+        <div class="mobile-menu-content">
+          <nav class="site-mobile-menu">
+            <ul>
+              <li>
+                <a href="index.html"><span class="menu-text">Anasayfa</span></a>
+              </li>
+              <li class="has-children">
+                <a href="fifa-coins.html"
+                  ><span class="menu-text">Fifa Coin Satın Al</span></a
+                >
+                <span class="menu-toggle"
+                  ><i class="far fa-angle-down"></i
+                ></span>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="yontem.html"
+                      ><span class="menu-text">PlayStation 4</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="yontem.html"
+                      ><span class="menu-text">PlayStation 5</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="yontem.html"
+                      ><span class="menu-text">Xbox One</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="yontem.html"
+                      ><span class="menu-text">Xbox Series X|S</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="yontem.html"><span class="menu-text">PC</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="has-children">
+                <a href="index.html"><span class="menu-text">Hesaplar</span></a>
+                <span class="menu-toggle"
+                  ><i class="far fa-angle-down"></i
+                ></span>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="hesaplar.html"
+                      ><span class="menu-text">PlayStation 4</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="hesaplar.html"
+                      ><span class="menu-text">PlayStation 5</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="hesaplar.html"
+                      ><span class="menu-text">Xbox One</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="hesaplar.html"
+                      ><span class="menu-text">Xbox Series X|S</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="hesaplar.html"
+                      ><span class="menu-text">PC</span></a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#!"><span class="menu-text">Boosting</span></a>
+              </li>
+              <li>
+                <a href="#!"><span class="menu-text">Değerlendirmeler</span></a>
+              </li>
+              <li>
+                <a href="SSS.html"><span class="menu-text">SSS</span></a>
+              </li>
+              <li>
+                <a href="blog.html"><span class="menu-text">Blog</span></a>
+              </li>
+              <li>
+                <a href="#!"><span class="menu-text">İletişim</span></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS
+============================================ -->
+
+    <!-- Vendors JS -->
+    <!-- <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script> -->
+
+    <!-- Plugins JS -->
+    <!-- 
+        <script src="assets/js/plugins/parallax.min.js"></script>
+        <script src="assets/js/plugins/jquery.ajaxchimp.min.js"></script>
+        <script src="assets/js/plugins/aos.min.js"></script>
+        <script src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
+        <script src="assets/js/plugins/jquery.animatedheadline.min.js"></script>
+        <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+        <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/plugins/svg-inject.min.js"></script>
+        <script src="assets/js/plugins/swiper.min.js"></script>
+        <script src="assets/js/plugins/vanilla-tilt.min.js"></script>
+        <script src="assets/js/plugins/vidim.min.js"></script>
+        <script src="assets/js/plugins/vivus.min.js"></script>
+        <script src="assets/js/plugins/waypoints.min.js"></script>
+
+-->
+
+    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+    <script src="assets/js/vendor/vendor.min.js"></script>
+    <script src="assets/js/plugins/plugins.min.js"></script>
+    <script src="assets/js/plugins/daterangepicker.js"></script>
+    <script src="assets/js/plugins/slick.js"></script>
+
+    <!-- Main Activation JS -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      $(function () {
+        if ($("#ms-menu-trigger")[0]) {
+          $("body").on("click", "#ms-menu-trigger", function () {
+            $(".ms-menu").toggleClass("toggled");
+          });
+        }
+      });
+    </script>
+
+    <script>
+      $(function () {
+        if ($("#ms-right-menu-trigger")[0]) {
+          $("body").on("click", "#ms-right-menu-trigger", function () {
+            $(".ms-right-menu").toggleClass("toggled");
+          });
+        }
+      });
+    </script>
+
+    <script>
+      $(document).on("ready", function () {
+        $(".variable").slick({
+          dots: false,
+          infinite: false,
+          variableWidth: true,
+        });
+      });
+    </script>
+
+    <script>
+      const toggle = document.querySelector("#toggle");
+
+      const updateBackground = (event) => {
+        document.getElementById("onOffScreen").classList.toggle("on");
+      };
+
+      toggle.addEventListener(
+        "click",
+        () => document.getElementById("onOffScreen").classList.toggle("on"),
+        false
+      );
+    </script>
+
+    <!-- Dürt Function -->
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        function startTimer() {
+          var pokeButton = document.getElementById("poke");
+
+          pokeButton.disabled = true;
+          pokeButton.textContent = "00:00:00";
+
+          var timeLeft = 7200;
+
+          var timerId = setInterval(function () {
+            var hours = Math.floor(timeLeft / 3600);
+            var minutes = Math.floor((timeLeft % 3600) / 60);
+            var seconds = timeLeft % 60;
+
+            pokeButton.textContent = [
+              hours.toString().padStart(2, "0"),
+              minutes.toString().padStart(2, "0"),
+              seconds.toString().padStart(2, "0"),
+            ].join(":");
+
+            if (timeLeft <= 0) {
+              clearInterval(timerId);
+              pokeButton.disabled = false;
+              pokeButton.textContent = "Dürt";
+            }
+            timeLeft -= 1;
+          }, 1000);
+        }
+
+        document.getElementById("poke").addEventListener("click", function () {
+          startTimer();
+        });
+      });
+    </script> -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        function startTimer(chatId, timeLeft) {
+          var pokeButton = document.getElementById("poke-" + chatId);
+          pokeButton.disabled = true;
+
+          var timerId = setInterval(function () {
+            var hours = Math.floor(timeLeft / 3600);
+            var minutes = Math.floor((timeLeft % 3600) / 60);
+            var seconds = timeLeft % 60;
+
+            pokeButton.textContent = [
+              hours.toString().padStart(2, "0"),
+              minutes.toString().padStart(2, "0"),
+              seconds.toString().padStart(2, "0"),
+            ].join(":");
+
+            if (timeLeft <= 0) {
+              clearInterval(timerId);
+              pokeButton.disabled = false;
+              pokeButton.textContent = "Dürt";
+            }
+            timeLeft -= 1;
+          }, 1000);
+        }
+
+        function savePokeTime(chatId) {
+          var storedTimes = JSON.parse(localStorage.getItem("pokeTimes")) || {};
+          var currentTime = new Date().toISOString();
+          storedTimes[chatId] = currentTime;
+          localStorage.setItem("pokeTimes", JSON.stringify(storedTimes));
+        }
+
+        function checkLastPokeTime(chatId) {
+          var pokeButton = document.getElementById("poke-" + chatId);
+          var storedTimes = JSON.parse(localStorage.getItem("pokeTimes")) || {};
+          var lastPokeTime = storedTimes[chatId];
+
+          if (lastPokeTime) {
+            var currentTime = new Date();
+            var lastPokeDate = new Date(lastPokeTime);
+            var elapsedTime = Math.floor((currentTime - lastPokeDate) / 1000);
+            var timeLeft = 7200 - elapsedTime;
+
+            if (timeLeft > 0) {
+              startTimer(chatId, timeLeft);
+            } else {
+              pokeButton.disabled = false;
+              pokeButton.textContent = "Dürt";
+            }
+          } else {
+            pokeButton.disabled = false;
+            pokeButton.textContent = "Dürt";
+          }
+        }
+
+        document.querySelectorAll(".poke-btn").forEach(function (pokeButton) {
+          var chatId = pokeButton.dataset.chatId;
+
+          checkLastPokeTime(chatId);
+
+          pokeButton.addEventListener("click", function () {
+            savePokeTime(chatId);
+            startTimer(chatId, 5); // Start 2-hour timer (7200 seconds) on click
+          });
+        });
+      });
+    </script>
+
+    <!-- Main Activation JS -->
+    <script>
+      !(function (e) {
+        e(["jquery"], function (e) {
+          return (function () {
+            function t(e, t, n) {
+              return g({
+                type: O.error,
+                iconClass: m().iconClasses.error,
+                message: e,
+                optionsOverride: n,
+                title: t,
+              });
+            }
+            function n(t, n) {
+              return (
+                t || (t = m()),
+                (v = e("#" + t.containerId)),
+                v.length ? v : (n && (v = d(t)), v)
+              );
+            }
+            function o(e, t, n) {
+              return g({
+                type: O.info,
+                iconClass: m().iconClasses.info,
+                message: e,
+                optionsOverride: n,
+                title: t,
+              });
+            }
+            function s(e) {
+              C = e;
+            }
+            function i(e, t, n) {
+              return g({
+                type: O.success,
+                iconClass: m().iconClasses.success,
+                message: e,
+                optionsOverride: n,
+                title: t,
+              });
+            }
+            function a(e, t, n) {
+              return g({
+                type: O.warning,
+                iconClass: m().iconClasses.warning,
+                message: e,
+                optionsOverride: n,
+                title: t,
+              });
+            }
+            function r(e, t) {
+              var o = m();
+              v || n(o), u(e, o, t) || l(o);
+            }
+            function c(t) {
+              var o = m();
+              return (
+                v || n(o),
+                t && 0 === e(":focus", t).length
+                  ? void h(t)
+                  : void (v.children().length && v.remove())
+              );
+            }
+            function l(t) {
+              for (var n = v.children(), o = n.length - 1; o >= 0; o--)
+                u(e(n[o]), t);
+            }
+            function u(t, n, o) {
+              var s = !(!o || !o.force) && o.force;
+              return (
+                !(!t || (!s && 0 !== e(":focus", t).length)) &&
+                (t[n.hideMethod]({
+                  duration: n.hideDuration,
+                  easing: n.hideEasing,
+                  complete: function () {
+                    h(t);
+                  },
+                }),
+                !0)
+              );
+            }
+            function d(t) {
+              return (
+                (v = e("<div/>")
+                  .attr("id", t.containerId)
+                  .addClass(t.positionClass)),
+                v.appendTo(e(t.target)),
+                v
+              );
+            }
+            function p() {
+              return {
+                tapToDismiss: !0,
+                toastClass: "toast",
+                containerId: "toast-container",
+                debug: !1,
+                showMethod: "fadeIn",
+                showDuration: 300,
+                showEasing: "swing",
+                onShown: void 0,
+                hideMethod: "fadeOut",
+                hideDuration: 1e3,
+                hideEasing: "swing",
+                onHidden: void 0,
+                closeMethod: !1,
+                closeDuration: !1,
+                closeEasing: !1,
+                closeOnHover: !0,
+                extendedTimeOut: 1e3,
+                iconClasses: {
+                  error: "toast-error",
+                  info: "toast-info",
+                  success: "toast-success",
+                  warning: "toast-warning",
+                },
+                iconClass: "toast-info",
+                positionClass: "toast-top-right",
+                timeOut: 5e3,
+                titleClass: "toast-title",
+                messageClass: "toast-message",
+                escapeHtml: !1,
+                target: "body",
+                closeHtml: '<button type="button">&times;</button>',
+                closeClass: "toast-close-button",
+                newestOnTop: !0,
+                preventDuplicates: !1,
+                progressBar: !1,
+                progressClass: "toast-progress",
+                rtl: !1,
+              };
+            }
+            function f(e) {
+              C && C(e);
+            }
+            function g(t) {
+              function o(e) {
+                return (
+                  null == e && (e = ""),
+                  e
+                    .replace(/&/g, "&amp;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                );
+              }
+              function s() {
+                c(), u(), d(), p(), g(), C(), l(), i();
+              }
+              function i() {
+                var e = "";
+                switch (t.iconClass) {
+                  case "toast-success":
+                  case "toast-info":
+                    e = "polite";
+                    break;
+                  default:
+                    e = "assertive";
+                }
+                I.attr("aria-live", e);
+              }
+              function a() {
+                E.closeOnHover && I.hover(H, D),
+                  !E.onclick && E.tapToDismiss && I.click(b),
+                  E.closeButton &&
+                    j &&
+                    j.click(function (e) {
+                      e.stopPropagation
+                        ? e.stopPropagation()
+                        : void 0 !== e.cancelBubble &&
+                          e.cancelBubble !== !0 &&
+                          (e.cancelBubble = !0),
+                        E.onCloseClick && E.onCloseClick(e),
+                        b(!0);
+                    }),
+                  E.onclick &&
+                    I.click(function (e) {
+                      E.onclick(e), b();
+                    });
+              }
+              function r() {
+                I.hide(),
+                  I[E.showMethod]({
+                    duration: E.showDuration,
+                    easing: E.showEasing,
+                    complete: E.onShown,
+                  }),
+                  E.timeOut > 0 &&
+                    ((k = setTimeout(b, E.timeOut)),
+                    (F.maxHideTime = parseFloat(E.timeOut)),
+                    (F.hideEta = new Date().getTime() + F.maxHideTime),
+                    E.progressBar && (F.intervalId = setInterval(x, 10)));
+              }
+              function c() {
+                t.iconClass && I.addClass(E.toastClass).addClass(y);
+              }
+              function l() {
+                E.newestOnTop ? v.prepend(I) : v.append(I);
+              }
+              function u() {
+                if (t.title) {
+                  var e = t.title;
+                  E.escapeHtml && (e = o(t.title)),
+                    M.append(e).addClass(E.titleClass),
+                    I.append(M);
+                }
+              }
+              function d() {
+                if (t.message) {
+                  var e = t.message;
+                  E.escapeHtml && (e = o(t.message)),
+                    B.append(e).addClass(E.messageClass),
+                    I.append(B);
+                }
+              }
+              function p() {
+                E.closeButton &&
+                  (j.addClass(E.closeClass).attr("role", "button"),
+                  I.prepend(j));
+              }
+              function g() {
+                E.progressBar && (q.addClass(E.progressClass), I.prepend(q));
+              }
+              function C() {
+                E.rtl && I.addClass("rtl");
+              }
+              function O(e, t) {
+                if (e.preventDuplicates) {
+                  if (t.message === w) return !0;
+                  w = t.message;
+                }
+                return !1;
+              }
+              function b(t) {
+                var n =
+                    t && E.closeMethod !== !1 ? E.closeMethod : E.hideMethod,
+                  o =
+                    t && E.closeDuration !== !1
+                      ? E.closeDuration
+                      : E.hideDuration,
+                  s = t && E.closeEasing !== !1 ? E.closeEasing : E.hideEasing;
+                if (!e(":focus", I).length || t)
+                  return (
+                    clearTimeout(F.intervalId),
+                    I[n]({
+                      duration: o,
+                      easing: s,
+                      complete: function () {
+                        h(I),
+                          clearTimeout(k),
+                          E.onHidden && "hidden" !== P.state && E.onHidden(),
+                          (P.state = "hidden"),
+                          (P.endTime = new Date()),
+                          f(P);
+                      },
+                    })
+                  );
+              }
+              function D() {
+                (E.timeOut > 0 || E.extendedTimeOut > 0) &&
+                  ((k = setTimeout(b, E.extendedTimeOut)),
+                  (F.maxHideTime = parseFloat(E.extendedTimeOut)),
+                  (F.hideEta = new Date().getTime() + F.maxHideTime));
+              }
+              function H() {
+                clearTimeout(k),
+                  (F.hideEta = 0),
+                  I.stop(!0, !0)[E.showMethod]({
+                    duration: E.showDuration,
+                    easing: E.showEasing,
+                  });
+              }
+              function x() {
+                var e =
+                  ((F.hideEta - new Date().getTime()) / F.maxHideTime) * 100;
+                q.width(e + "%");
+              }
+              var E = m(),
+                y = t.iconClass || E.iconClass;
+              if (
+                ("undefined" != typeof t.optionsOverride &&
+                  ((E = e.extend(E, t.optionsOverride)),
+                  (y = t.optionsOverride.iconClass || y)),
+                !O(E, t))
+              ) {
+                T++, (v = n(E, !0));
+                var k = null,
+                  I = e("<div/>"),
+                  M = e("<div/>"),
+                  B = e("<div/>"),
+                  q = e("<div/>"),
+                  j = e(E.closeHtml),
+                  F = { intervalId: null, hideEta: null, maxHideTime: null },
+                  P = {
+                    toastId: T,
+                    state: "visible",
+                    startTime: new Date(),
+                    options: E,
+                    map: t,
+                  };
+                return (
+                  s(), r(), a(), f(P), E.debug && console && console.log(P), I
+                );
+              }
+            }
+            function m() {
+              return e.extend({}, p(), b.options);
+            }
+            function h(e) {
+              v || (v = n()),
+                e.is(":visible") ||
+                  (e.remove(),
+                  (e = null),
+                  0 === v.children().length && (v.remove(), (w = void 0)));
+            }
+            var v,
+              C,
+              w,
+              T = 0,
+              O = {
+                error: "error",
+                info: "info",
+                success: "success",
+                warning: "warning",
+              },
+              b = {
+                clear: r,
+                remove: c,
+                error: t,
+                getContainer: n,
+                info: o,
+                options: {},
+                subscribe: s,
+                success: i,
+                version: "2.1.3",
+                warning: a,
+              };
+            return b;
+          })();
+        });
+      })(
+        "function" == typeof define && define.amd
+          ? define
+          : function (e, t) {
+              "undefined" != typeof module && module.exports
+                ? (module.exports = t(require("jquery")))
+                : (window.toastr = t(window.jQuery));
+            }
+      );
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $("#allDoneButton").on("click", function (e) {
+          e.preventDefault();
+          var tooltip = $("#confirmationTooltip");
+
+          if (tooltip.is(":visible")) {
+            tooltip.stop(true, true).fadeOut();
+          } else {
+            var buttonPosition = $(this).offset();
+            var tooltipHeight = tooltip.outerHeight();
+            tooltip.stop(true, true).css({
+              display: "block",
+            });
+          }
+        });
+
+        $("#confirmNo").on("click", function () {
+          $("#confirmationTooltip").fadeOut();
+        });
+
+        $("#confirmYes").on("click", function () {
+          $.ajax({
+            url: "https://google.com",
+            method: "POST",
+            data: { id: 5 },
+            success: function (response) {
+              $("#confirmationTooltip").fadeOut();
+              $("#successModal").modal("show");
+            },
+            error: function (xhr) {
+              $("#confirmationTooltip").fadeOut();
+              toastr["error"]("Başarısız: " + xhr.responseText);
+              toastr.options = {
+                closeButton: false,
+                debug: false,
+                newestOnTop: false,
+                progressBar: false,
+                positionClass: "toast-top-right",
+                preventDuplicates: false,
+                onclick: null,
+                showDuration: "300",
+                hideDuration: "1000",
+                timeOut: "5000",
+                extendedTimeOut: "1000",
+                showEasing: "swing",
+                hideEasing: "linear",
+                showMethod: "fadeIn",
+                hideMethod: "fadeOut",
+              };
+            },
+          });
+        });
+
+        $("#modalCloseButton").on("click", function () {
+          window.location.href = "profil.html";
+        });
+      });
+    </script>
+  </body>
+</html>

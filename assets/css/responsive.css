@@ -1,0 +1,193 @@
+/* 1366 PC */
+@media only screen and (max-width: 1366px) {}
+/* 991 PC */
+@media only screen and (max-width: 991px) {
+    .message-lg-end{
+        position: relative;
+        right:0px;
+    }
+    .message-lg-start{
+        position: relative;
+        left:0px;
+    }
+}
+/* Tablet */
+@media only screen and (max-width: 768px) {
+    .intro-image{
+        position: relative;
+        margin-top: 0px;
+    }
+    .intro-section{
+        height: auto;
+    }
+    .slick-slide {
+        margin: 0px 5px;
+    }
+    .fast-message .variable div p{
+        padding: 5px;
+    }
+    .fast-message{
+        padding: 5px;
+        padding-left: 30px;
+        width: 90%;
+    }
+    .message-end{
+        width: 30%;
+        margin-left: 30px !important;
+    }
+    .paperclip{
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 0px;
+        padding-left: 10px;
+    }
+}
+/* Mobile */
+@media only screen and (max-width: 501px) {
+    .icon-box .content .title{
+        font-size: 13px;
+    }
+    .nav-link{
+        padding: 0rem 0.8rem;
+    }
+    .footer-section .site-main-menu > ul, .footer-section .footer-social-inline{
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .footer-section {
+        padding: 20px 0 0px;
+    }
+    .section-padding-bottom-150 {
+        padding-bottom: 30px;
+    }
+    .icon-box {
+        padding: 20px 5px;
+    }
+    .icon-box .content .desc p {
+        line-height: 1.2;
+        font-size: 14px;
+    }
+    .footer-newsletter .submit-btn {
+        padding: 10px 15px;
+    }
+    .t_profile_section .site-main-menu > ul{
+        justify-content: center;
+    }
+    .t_profile_section{
+        padding-top: 120px; 
+        padding-bottom: 50px;
+    }
+    .upk-xnac-thumbs-slide-wrap .upk-xnac-slide-item .upk-xnac-title a{
+        color: #fff;
+        text-shadow: -1px -1px 30px rgb(255 255 255);
+    }
+    .upk-xnac-single-slide-wrap .upk-xnac-slide-item .upk-author-text, .upk-xnac-single-slide-wrap .upk-xnac-slide-item .upk-author-text .upk-name{
+        color: #fff;
+        font-weight: 500;
+        background-color: rgb(43, 45, 65, 0.7);
+    }
+    .cta-section .nav-wrapper > ul{
+        justify-content: center;
+    }
+    .cta-section .tab-content .contact-info, .faq-section .contact-info{
+        justify-content: center;
+    }
+    /*Credit Card*/
+    .credit-card-box .front, .credit-card-box .back{
+        width: 100%;
+    }
+    /*Profile*/
+    .t_profile_section .tabs-to-dropdown .pagination li{
+        padding: 0 5px;
+    }
+    .t_profile_section .nav-wrapper > ul{
+        justify-content: center;
+    }
+    .alinan-odemeler .alert{
+        padding: .1rem .3rem;
+        margin-bottom: 1rem;
+    }
+    .mobile-flex-column{
+        flex-direction: column;
+    }
+    .aktif-siparis-modal .custom-file-label{
+        padding: 0 10px;
+        font-size: 14px;
+    }
+    .icon-up-down-animation .shape-4{
+        top: -10px;
+        z-index: 2;
+    }
+    .icon-up-down-animation .shape-5{
+        bottom: 10px;
+        z-index: 2;
+    }
+    .w-100-web{
+        width: 100% !important;
+    }
+    .mf-content {
+        padding: 7px 7px;
+        max-width: 70%;
+    }
+    #ms-right-menu.show {
+        transform: translate(-60%, -50%);
+    }
+}
+@media only screen and (max-width: 440px) {
+    .footer-newsletter input {
+        width: 200px;
+        padding: 10px 20px;
+        margin-right: 10px;
+    }
+    .fast-message{
+        width: 80%;
+    }
+    .message-end{
+        width: 30%;
+    }
+    .paperclip{
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .credit-card-box .number {
+        font-size: 25px;
+    }
+    .credit-card-box .card-holder, .credit-card-box .card-expiration-date{
+        font-size: 18px;
+    }
+    .credit-card-box .front, .credit-card-box .back{
+        height: 200px;
+    }
+    .credit-card-box .number{
+        top: 85px;
+    }
+    .credit-card-box .card-holder, .credit-card-box .card-expiration-date{
+        top: 140px;
+    }
+    .fast-message{
+        width: 75%;
+    }
+    .message-end{
+        width: 30%;
+    }
+    .paperclip{
+        width: 25%;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .footer-newsletter input {
+        width: 150px;
+        padding: 5px 10px;
+        margin-right: 5px;
+        font-size: 15px;
+    }
+    .swiper-button-next, .swiper-button-prev{
+        top: 43% !important;
+    }
+    .credit-card-box{
+        height: 200px;
+    }
+}
